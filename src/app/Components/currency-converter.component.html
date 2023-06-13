@@ -1,24 +1,20 @@
 <div class="currency-converter">
-    <h2>Курс валют</h2>
-    <div class="exchange-rates">
-        <p>USD: {{ exchangeRates['USD']['UAH'] }}</p>
-        <p>EUR: {{ exchangeRates['EUR']['UAH'] }}</p>
-    </div>
-    <div>
-        <input [(ngModel)]="amount1" (input)="convertCurrency(1)" placeholder="Сумма 1">
-        <select [(ngModel)]="currency1" (change)="convertCurrency(1)">
-            <option value="UAH">UAH</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-        </select>
-    </div>
+  <h2>Курс валют</h2>
+  <div class="exchange-rates">
+    <p>USD: {{ exchangeRates['USD']['UAH'] }}</p>
+    <p>EUR: {{ exchangeRates['EUR']['UAH'] }}</p>
+  </div>
+  <div>
+    <input [(ngModel)]="amount1" (input)="updateAmounts('amount1')" placeholder="Сумма 1">
+    <select [(ngModel)]="currency1" (change)="updateAmounts('amount1')">
+      <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+    </select>
+  </div>
 
-    <div>
-        <input [(ngModel)]="amount2" (input)="convertCurrency(2)" placeholder="Сумма 2">
-        <select [(ngModel)]="currency2" (change)="convertCurrency(2)">
-            <option value="UAH">UAH</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-        </select>
-    </div>
+  <div>
+    <input [(ngModel)]="amount2" (input)="updateAmounts('amount2')" placeholder="Сумма 2">
+    <select [(ngModel)]="currency2" (change)="updateAmounts('amount2')">
+      <option *ngFor="let currency of currencies" [value]="currency">{{ currency }}</option>
+    </select>
+  </div>
 </div>
