@@ -1,8 +1,8 @@
 <div class="currency-converter">
   <h2>Курс валют</h2>
   <div class="exchange-rates">
-    <p>USD: {{ exchangeRates['USD']['UAH'] }}</p>
-    <p>EUR: {{ exchangeRates['EUR']['UAH'] }}</p>
+    <p>1 USD = {{ exchangeRates['USD']['UAH'] }} UAH</p>
+    <p>1 EUR = {{ exchangeRates['EUR']['UAH'] }} UAH</p>
   </div>
   <div>
     <input [(ngModel)]="amount1" (input)="updateAmounts('amount1')" placeholder="Сумма 1">
